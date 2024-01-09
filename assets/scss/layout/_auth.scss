@@ -1,4 +1,4 @@
-.auth-wrapper {
+.wrapper-auth {
   background: #f5f4f4;
   height: 100vh;
   width: 100vw;
@@ -6,12 +6,29 @@
   align-items: center;
   justify-content: center;
 
-  .auth-form {
-    height: auto;
-    width: 700px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
-      rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+  .form {
+    &-auth {
+      height: auto;
+      width: 500px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+        rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+      padding: 20px;
+    }
+    &-item {
+      height: 50px;
+      input {
+        height: 100%;
+        border-radius: 5px;
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+        font-size: 16px;
+      }
+    }
+  }
+  .button-auth {
+    height: 50px;
+    border-radius: 5px;
+    font-size: 20px;
   }
 }
