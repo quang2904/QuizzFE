@@ -1,0 +1,13 @@
+*User: firstName, lastName, media, username, password, role, colorRandom
+*Answer: type, answerTime, text, explain, score
+*Question: topics, cloned, time, type, cached, hasCorrectAnswer
+*Theme: fontFamily, titleFontFamily, fontColor, backgroundColor, image, video, largeShapeColor, smallShapeColor
+*Session: topics, time, courses, image, cached, slug, lang
+*Course: media, name, description
+*Stats: played, totalPlayers, totalCorrect, totalQuestions
+*Archived: userId, SessionId
+*Love: userId, SessionId
+*Team: name, description, userId,
+*Member: teamId, memberId
+*Result: answer, studentId
+*Student: score, 
