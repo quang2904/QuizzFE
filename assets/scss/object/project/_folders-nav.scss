@@ -1,0 +1,197 @@
+.right-panel-container {
+  width: calc(100% - 384px);
+}
+.quiz-bucket-panel-wrapper {
+  right: 0%;
+}
+.quiz-bucket-panel {
+  width: 80%;
+  min-width: 800px;
+  max-width: 1440px;
+  position: absolute;
+}
+.quiz-bucket-panel.quiz-editor {
+  width: 66%;
+}
+.quiz-bucket-questions-list-container {
+  height: 100%;
+}
+.quiz-bucket-questions-list-container.add-all-option {
+  height: calc(100% - 64px);
+}
+.quiz-bucket-questions-list-container.super-banner {
+  height: calc(100% - 168px);
+}
+.quiz-bucket-questions-list-container.super-banner.super-user {
+  height: calc(100% - 134px);
+}
+.empty-state-title {
+  max-width: 322px;
+}
+.quiz-bucket-filters {
+  max-width: 768px;
+}
+.subjects-dropdown {
+  height: 404px;
+}
+.quiz-bucket-search-input {
+  max-width: 413px;
+  min-width: 413px;
+}
+.quiz-bucket-enter.quiz-bucket-panel-wrapper,
+.quiz-bucket-leave-active.quiz-bucket-panel-wrapper {
+  background-color: #0000;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) background-color;
+}
+.quiz-bucket-enter-active.quiz-bucket-panel-wrapper,
+.quiz-bucket-leave-active.quiz-bucket-panel {
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) background-color;
+}
+.quiz-bucket-enter-active .quiz-bucket-panel {
+  animation: modalSlideInLeft-f17a7e10;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation-duration: 0.3s !important;
+  animation-fill-mode: both;
+}
+.quiz-bucket-leave-active .quiz-bucket-panel {
+  animation: modalSlideOutRight-f17a7e10;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation-duration: 0.3s !important;
+  animation-fill-mode: both;
+}
+.fade-enter.quiz-bucket-panel-wrapper,
+.fade-leave-active.quiz-bucket-panel-wrapper {
+  background-color: #0000;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) background-color;
+}
+.fade-enter-active.quiz-bucket-panel-wrapper,
+.fade-leave-active.quiz-bucket-panel {
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) background-color;
+}
+.fade-enter-active .quiz-bucket-panel {
+  animation: modalFadeIn-f17a7e10;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation-duration: 0.3s !important;
+  animation-fill-mode: both;
+}
+.fade-leave-active .quiz-bucket-panel {
+  animation: modalFadeOut-f17a7e10;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation-duration: 0.3s !important;
+  animation-fill-mode: both;
+}
+@keyframes modalSlideInLeft-f17a7e10 {
+  0% {
+    opacity: 0.3;
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+@keyframes modalSlideOutRight-f17a7e10 {
+  0% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+  to {
+    opacity: 0.2;
+    visibility: hidden;
+    transform: translate3d(150%, 0, 0);
+  }
+}
+@keyframes modalFadeIn-f17a7e10 {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes modalFadeOut-f17a7e10 {
+  0% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes slide-bdcd7cd5 {
+  0% {
+    transform: translate(-100%);
+  }
+  to {
+    transform: translate(100%);
+  }
+}
+.shine-div {
+  position: relative;
+  overflow: hidden;
+}
+.shine-div:after {
+  content: '';
+  top: 0;
+  transform: translate(100%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  animation: slide-bdcd7cd5 1.5s infinite;
+  background: linear-gradient(
+    to right,
+    #fff0,
+    #ffffff4d 50%,
+    #80bae800 99%,
+    #7db9e800
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00ffffff",endColorstr="#007db9e8",GradientType=1);
+}
+.folders-container,
+.folder-details-container {
+  scroll-behavior: smooth;
+}
+.banner-image-container {
+  width: 140px;
+  min-height: 73px;
+  position: relative;
+}
+.banner-image-container .banner-image {
+  position: absolute;
+  left: 8px;
+  bottom: -1px;
+}
+.content-modal-height {
+  height: 250px;
+}
+@keyframes slide-0afe1c92 {
+  0% {
+    transform: translate(-100%);
+  }
+  to {
+    transform: translate(100%);
+  }
+}
+.shine-div {
+  position: relative;
+  overflow: hidden;
+}
+.shine-div:after {
+  content: '';
+  top: 0;
+  transform: translate(100%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  animation: slide-0afe1c92 1.5s infinite;
+  background: linear-gradient(
+    to right,
+    #fff0,
+    #ffffff4d 50%,
+    #80bae800 99%,
+    #7db9e800
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00ffffff",endColorstr="#007db9e8",GradientType=1);
+}

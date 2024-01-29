@@ -57,7 +57,23 @@
 @use 'object/project/_stats-modal';
 @use 'object/project/_super-upsell-modal';
 @use 'object/project/_user-info-details-modal';
+@use 'object/project/_my-library';
+@use 'object/project/_circular-donut-chart';
+@use 'object/project/_collections-nav';
+@use 'object/project/_content-card-small';
+@use 'object/project/_content-limit-banner';
+@use 'object/project/_create-folder-modal';
+@use 'object/project/_empty-state-placeholder';
+@use 'object/project/_entity-saved-success-modal';
+@use 'object/project/_filter-dropdown';
+@use 'object/project/_folders-nav';
+@use 'object/project/_home';
+@use 'object/project/_import-slides-modal';
+@use 'object/project/_multiple-select-dropdown';
+@use 'object/project/_quiz-card';
+@use 'object/project/_remaining-days-sidebar';
+@use 'object/project/_save-entity-folder';
 
 // custom
 
-@use 'custom/index';
+@use 'custom';

@@ -1,0 +1,107 @@
+@keyframes slide {
+  0% {
+    transform: translate(-100%);
+  }
+  to {
+    transform: translate(100%);
+  }
+}
+.shine-div {
+  position: relative;
+  overflow: hidden;
+}
+.shine-div:after {
+  content: '';
+  top: 0;
+  transform: translate(100%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  animation: slide 1.5s infinite;
+  background: linear-gradient(
+    to right,
+    #fff0,
+    #ffffff4d 50%,
+    #80bae800 99%,
+    #7db9e800
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00ffffff",endColorstr="#007db9e8",GradientType=1);
+}
+
+.folder-filter-btn:hover .edit-delete-btn-container {
+  visibility: visible;
+}
+.folder-filter-btn:hover .folder-total-items {
+  visibility: hidden;
+}
+@keyframes slide {
+  0% {
+    transform: translate(-100%);
+  }
+  to {
+    transform: translate(100%);
+  }
+}
+.shine-div {
+  position: relative;
+  overflow: hidden;
+}
+.shine-div:after {
+  content: '';
+  top: 0;
+  transform: translate(100%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  animation: slide-828f47e5 1.5s infinite;
+  background: linear-gradient(
+    to right,
+    #fff0,
+    #ffffff4d 50%,
+    #80bae800 99%,
+    #7db9e800
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00ffffff",endColorstr="#007db9e8",GradientType=1);
+}
+@media screen and (min-width: 1024px) {
+  .navigation-drawer {
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+  }
+  .navigation-drawer.with-limit-banner {
+    max-height: calc(100vh - 164px);
+  }
+}
+.app-body-container {
+  overflow: hidden !important;
+}
+.my-library-layout-desktop {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 16px;
+  width: 100%;
+  max-width: 1280px;
+}
+.my-library-layout-desktop .navigation-layout {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+.my-library-layout-desktop .library-view-layout {
+  grid-column: 4/-1;
+}
+.my-library-layout-mobile {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 8px;
+  width: 100%;
+}
+.my-library-layout-mobile .navigation-layout,
+.my-library-layout-mobile .library-view-layout {
+  grid-column: 1/-1;
+}
+.my-library-content-limit-banner {
+  box-shadow: inset 0 0 4px #0000001a;
+}
