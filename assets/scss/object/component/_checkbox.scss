@@ -1,0 +1,147 @@
+.checkbox__input.showFocusOutline:focus + label:before {
+  outline: 0;
+  box-shadow: 0 0 0 2px #a076cc;
+}
+
+.checkbox__input {
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.checkbox__input:hover + label {
+  color: #6d6d6d;
+}
+
+.checkbox__input:disabled + label {
+  color: #424242;
+}
+
+.checkbox__input:disabled + label:before {
+  background: #e5e5e5;
+}
+
+.checkbox__input:checked + label.lilac:before {
+  background: #8854c0;
+  border: 1px solid #8854c0;
+}
+
+.checkbox__input:checked + label:before {
+  background: #00a06a;
+  border: 1px solid #00a06a;
+}
+
+.checkbox__input:checked + label.white-border:before {
+  border: 1px solid #ffffff;
+}
+
+.checkbox__input:checked + label:after {
+  content: '';
+  position: absolute;
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  height: 4px;
+  width: 7.8px;
+  transform: rotate(-45deg);
+}
+
+.checkbox__input:checked:disabled + label:before {
+  background: #e5e5e5;
+  border: 1px solid rgba(9, 9, 9, 0.2);
+}
+
+.checkbox__input:checked:disabled + label:after {
+  border-left: 2px solid rgba(9, 9, 9, 0.2);
+  border-bottom: 2px solid rgba(9, 9, 9, 0.2);
+}
+
+.checkbox__label:before {
+  flex-shrink: 0;
+  content: '';
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  background: #fff;
+  border-radius: 2px;
+  border: 1px solid var(--buttonColorBefore);
+}
+
+.checkbox__label.leading-label:before {
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+.checkbox.md .checkbox__label {
+  font-size: 14px;
+}
+
+.checkbox.md .checkbox__label:before {
+  width: 16px;
+  height: 16px;
+}
+
+.checkbox.md .checkbox__label:after {
+  left: 4px;
+}
+
+.checkbox.md .checkbox__label.has-label:after {
+  left: 4px;
+  bottom: 9px;
+  top: unset;
+}
+
+.checkbox.md .checkbox__label.has-label.leading-label:after {
+  right: 4px;
+  bottom: 9px;
+  left: unset;
+  top: unset;
+}
+
+.checkbox.sm .checkbox__label {
+  font-size: 12px;
+}
+
+.checkbox.sm .checkbox__label:before {
+  width: 12px;
+  height: 12px;
+}
+
+.checkbox.sm .checkbox__label:after {
+  top: 3px;
+  left: 2px;
+}
+
+.checkbox.sm .checkbox__label.has-label:after {
+  top: 6px;
+  left: 2px;
+}
+
+.checkbox.sm .checkbox__label.has-label.leading-label:after {
+  top: 6px;
+  right: 2px;
+  left: unset;
+}
+
+.checkbox.xs .checkbox__label {
+  font-size: 11px;
+}
+
+.checkbox.xs .checkbox__label:before {
+  width: 12px;
+  height: 12px;
+}
+
+.checkbox.xs .checkbox__label:after {
+  top: 3px;
+  left: 2px;
+}
+
+.checkbox.xs .checkbox__label.has-label:after {
+  top: 5px;
+  left: 2px;
+}
+
+.checkbox.xs .checkbox__label.has-label.leading-label:after {
+  top: 5px;
+  right: 2px;
+  left: unset;
+}

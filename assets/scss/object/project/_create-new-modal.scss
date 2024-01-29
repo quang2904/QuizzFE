@@ -1,0 +1,25 @@
+#name {
+  width: calc(100% - 68px);
+}
+
+.color-menu .colors-list {
+  transform: scaleY(0.0001) translate(-117px);
+  transform-origin: top;
+  transition: 0.1s all ease-in-out;
+  opacity: 0;
+}
+
+.color-menu .colors-list .color {
+  width: 22px;
+  height: 22px;
+  transition: 0.1s all ease-in-out;
+}
+
+.color-menu .colors-list .color:hover {
+  transform: scale(1.2);
+}
+
+.color-menu .colors-list.show {
+  transform: scaleY(1) translate(-117px);
+  opacity: 1;
+}

@@ -1,0 +1,55 @@
+.game-type-label {
+  color: #090909;
+  border-left: solid #cad2dc;
+  background-color: #cad2dc33;
+}
+
+@media screen and (max-width: 576px) {
+  .game-type-label i {
+    margin-right: 0;
+  }
+}
+
+.game-type-label.async {
+  background-color: #00c98533;
+  color: #00c985;
+  border-left-color: #00c985;
+}
+
+.game-type-label.live,
+.game-type-label.tp,
+.game-type-label.pres_tp {
+  background-color: #7b6bea33;
+  color: #7b6bea;
+  border-left-color: #7b6bea;
+}
+
+.game-type-label.pres_async {
+  background-color: #00c98533;
+  color: #00c985;
+  border-left-color: #00c985;
+}
+
+.game-type-label.team {
+  background-color: #9a429233;
+  color: #9a4292;
+  border-left-color: #9a4292;
+}
+
+.game-type-label.test {
+  background-color: #ec407a33;
+  color: #ec407a;
+  border-left-color: #ec407a;
+}
+
+.game-type-label.challenge {
+  background-color: #1480b833;
+  color: #1480b8;
+  border-left-color: #1480b8;
+}
+
+.game-type-label.scheduled {
+  color: #efa929;
+  background-color: #efa92933;
+  border-left-color: #efa929;
+}

@@ -1,0 +1,106 @@
+.side-panel {
+  z-index: 10001;
+}
+.modal-body {
+  z-index: 10002;
+}
+.modal-content {
+  max-height: calc(100vh - 262px);
+}
+.modal-header {
+  max-height: 10%;
+}
+.modal-container {
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: calc(100vh - 62px);
+}
+.modal-container-full-screen {
+  height: 100%;
+}
+.modal-mask {
+  animation-duration: 0.3s;
+}
+.slide-enter.modal-mask,
+.slide-leave-active.modal-mask {
+  background-color: #0000;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) background-color;
+}
+.slide-enter-active.modal-mask,
+.slide-leave-active.modal-anim {
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) background-color;
+}
+.slide-enter-active .modal-anim {
+  animation: modalSlideInUp-496c2888;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation-duration: 0.3s !important;
+  animation-fill-mode: both;
+}
+.slide-leave-active .modal-anim {
+  animation: modalSlideOutDown-496c2888;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation-duration: 0.3s !important;
+  animation-fill-mode: both;
+}
+.fade-enter.modal-mask,
+.fade-leave-active.modal-mask {
+  background-color: #0000;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) background-color;
+}
+.fade-enter-active.modal-mask,
+.fade-leave-active.modal-anim {
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) background-color;
+}
+.fade-enter-active .modal-anim {
+  animation: modalFadeIn-496c2888;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation-duration: 0.3s !important;
+  animation-fill-mode: both;
+}
+.fade-leave-active .modal-anim {
+  animation: modalFadeOut-496c2888;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation-duration: 0.3s !important;
+  animation-fill-mode: both;
+}
+@keyframes modalSlideInUp-496c2888 {
+  0% {
+    opacity: 0.3;
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+@keyframes modalSlideOutDown-496c2888 {
+  0% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+  to {
+    opacity: 0.2;
+    visibility: hidden;
+    transform: translate3d(0, 150%, 0);
+  }
+}
+@keyframes modalFadeIn-496c2888 {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes modalFadeOut-496c2888 {
+  0% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.no-padding {
+  padding: 0 !important;
+}

@@ -1,0 +1,32 @@
+.sidebar-navigation .link.selected {
+  box-shadow: inset -4px 0 #8854c0;
+}
+
+.create-btn-container {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.sidebar-card {
+  border: 1px solid rgba(255, 164, 2, 0.2);
+  border-top: 3px solid #ffa402;
+}
+
+.sidebar-card {
+  border: 1px solid rgba(255, 164, 2, 0.2);
+  border-top: 3px solid #ffa402;
+  max-width: 10.5rem;
+}
+
+.paid-org-dropdown-btn {
+  color: #000;
+}
+
+.paid-org-dropdown-btn:hover {
+  background-color: #0909090d;
+}
+
+.filter-box-shadow {
+  transform: scale(1);
+  box-shadow: 0 2px 4px #00000014;
+}

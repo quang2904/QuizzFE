@@ -1,0 +1,33 @@
+@keyframes slide {
+  0% {
+    transform: translate(-100%);
+  }
+
+  to {
+    transform: translate(100%);
+  }
+}
+
+.shine-div {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-div:after {
+  content: '';
+  top: 0;
+  transform: translate(100%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  animation: slide 1.5s infinite;
+  background: linear-gradient(
+    to right,
+    #fff0,
+    #ffffff4d 50%,
+    #80bae800 99%,
+    #7db9e800
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00ffffff", endColorstr="#007db9e8", GradientType=1);
+}

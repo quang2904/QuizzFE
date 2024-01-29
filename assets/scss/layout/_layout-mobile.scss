@@ -1,0 +1,41 @@
+.negative-shadow-md {
+  box-shadow: 0 -4px 4px -1px #0000001a, 0 2px 4px -1px #0000000f;
+}
+
+.bottom-nav-wrapper {
+  z-index: 5;
+  position: sticky;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  flex-direction: column;
+  font-size: 0.625rem;
+  line-height: 1rem;
+  letter-spacing: +0.015em;
+  --tw-text-opacity: 1;
+  color: rgb(109 109 109 / var(--tw-text-opacity));
+}
+
+.create-icon:before {
+  background: linear-gradient(to right bottom, #b165aa, #a25af0);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: initial;
+}
+
+.dashboard-layout-mobile {
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.5s ease;
+  transform: translate(0);
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  transform: translate(-100%);
+}

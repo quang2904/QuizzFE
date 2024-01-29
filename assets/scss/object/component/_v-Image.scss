@@ -1,0 +1,8 @@
+.rounded-inherit {
+  border-radius: inherit;
+}
+.lazy-img[lazy='loaded'] {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: fadeIn;
+}

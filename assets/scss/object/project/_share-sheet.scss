@@ -1,0 +1,40 @@
+.share-wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.share-wrapper.mobile .primary-btn img {
+  margin-right: 0.5rem;
+  display: inline-block;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+.primary-btn {
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+.secondary-btn-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.secondary-btn-wrapper .secondary-btn {
+  height: 2rem;
+  flex-grow: 1;
+  flex-basis: 0px;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
