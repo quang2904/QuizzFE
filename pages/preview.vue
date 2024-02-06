@@ -37,9 +37,12 @@
     </div>
   </a-layout-header>
   <div>
-    <div class="rounded-lg border bg-purple-900 px-4 py-4">
+    <div class="rounded-lg border px-4 py-4">
       <div class="relative">
-        <a-input class="h-64 rounded-lg border bg-purple-900" />
+        <Editor
+          v-model="value"
+          class="h-44 h-64 rounded-lg border px-10 py-10"
+        />
         <a-button
           size="small"
           class="position-input"
@@ -63,19 +66,16 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { BellOutlined, PlusOutlined } from '@ant-design/icons-vue'
+import type { SelectProps } from 'ant-design-vue'
+import { Editor } from '#components'
+
 definePageMeta({
   layout: 'quizz',
 })
-import {
-  BellOutlined,
-  PlusOutlined,
-  InboxOutlined,
-} from '@ant-design/icons-vue'
-import type { SelectProps } from 'ant-design-vue'
-const handleChange = (value: string) => {
-  console.log(`selected ${value}`)
-}
+
 const checked = ref(false)
+const value = ref('lucy')
 const value1 = ref('lucy')
 const options1 = ref<SelectProps['options']>([
   {
@@ -95,6 +95,10 @@ const options1 = ref<SelectProps['options']>([
     label: 'Yiminghe',
   },
 ])
+
+const handleChange = (value: string) => {
+  console.log(`selected ${value}`)
+}
 </script>
 
 <style>
