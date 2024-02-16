@@ -1,5 +1,5 @@
 <template>
-  <Editor v-model="value" class="border" />
+  <Editor v-model="preview.content" class="border" />
 </template>
 <script setup lang="ts">
 import { Editor } from '#components'
@@ -7,6 +7,7 @@ import { Editor } from '#components'
 definePageMeta({
   layout: 'quizz',
 })
+const preview = usePreview()
 
 const value = ref('')
 

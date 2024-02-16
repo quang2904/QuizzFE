@@ -1,12 +1,13 @@
 <template>
   <a-layout-sider
+    theme="light"
     breakpoint="lg"
     collapsed-width="0"
     @collapse="onCollapse"
     @breakpoint="onBreakpoint"
   >
-    <div class="logo" />
-    <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
+    <div class="logo">Quizz</div>
+    <a-menu v-model:selectedKeys="selectedKeys" mode="inline">
       <a-menu-item key="1">
         <user-outlined />
         <span class="nav-text">nav 1</span>

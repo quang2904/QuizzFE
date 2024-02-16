@@ -1,0 +1,21 @@
+.answer {
+  &--editor::before {
+    padding: 0 0.5rem;
+  }
+
+  &--bg-1 {
+    background: #2e72ab;
+  }
+  &--bg-2 {
+    background: #319da5;
+  }
+  &--bg-3 {
+    background: #eea73c;
+  }
+  &--bg-4 {
+    background: #d4546d;
+  }
+  &--bg-5 {
+    background: #994490;
+  }
+}

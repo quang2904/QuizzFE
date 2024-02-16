@@ -30,6 +30,7 @@ export default defineNuxtConfig({
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
+    '@pinia/nuxt',
   ],
 
   // components: https://go.nuxtjs.dev/config-components
@@ -40,6 +41,14 @@ export default defineNuxtConfig({
     families: {
       'Lexend Deca': [100, 200, 300, 400, 600, 700, 800, 900],
     },
+  },
+
+  imports: {
+    dirs: ['./stores'],
+  },
+
+  pinia: {
+    storesDirs: ['~/stores/**', '#/stores/**', '@/stores/**'],
   },
 
   vite: {

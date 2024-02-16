@@ -199,17 +199,6 @@ function handleDrop(e: DragEvent) {
   height: calc(100vh - 64px);
   overflow: auto;
 }
-.ant-divider-horizontal.ant-divider-with-text {
-  font-size: 10px;
-  font-weight: 400;
-}
-.ant-layout-header {
-  background: white !important;
-}
-
-.ant-layout-header {
-  padding: 0 1.25rem !important;
-}
 
 .line {
   position: relative;

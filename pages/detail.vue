@@ -89,13 +89,3 @@
 import { HomeOutlined, PlusOutlined, MoreOutlined } from '@ant-design/icons-vue'
 const activeKey = ref('1')
 </script>
-
-<style>
-.ant-tabs-top > .ant-tabs-nav {
-  margin: 0px !important;
-}
-.ant-divider-horizontal.ant-divider-with-text {
-  font-size: 10px;
-  font-weight: 400;
-}
-</style>
