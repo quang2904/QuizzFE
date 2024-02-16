@@ -27,4 +27,13 @@
   </a-layout-sider>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const selectedKeys = ref<string[]>(['2'])
+const onCollapse = (collapsed: boolean, type: string) => {
+  console.log(collapsed, type)
+}
+
+const onBreakpoint = (broken: boolean) => {
+  console.log(broken)
+}
+</script>

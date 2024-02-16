@@ -1,41 +1,4 @@
 <template>
-  <a-layout-header
-    class="flex items-center justify-between gap-4 border bg-white shadow"
-  >
-    <div class="flex items-center gap-2">
-      <a-button :icon="h(PlusOutlined)"></a-button>
-      <a-select
-        v-model:value="value1"
-        class="w-32"
-        :options="options1"
-        @change="handleChange"
-      />
-    </div>
-    <div class="flex gap-2">
-      <a-select
-        v-model:value="value1"
-        class="w-32"
-        :options="options1"
-        @change="handleChange"
-      >
-        <template #suffixIcon
-          ><smile-outlined class="ant-select-suffix"
-        /></template>
-      </a-select>
-      <a-select
-        v-model:value="value1"
-        class="w-32"
-        :options="options1"
-        @change="handleChange"
-      >
-        <template #suffixIcon
-          ><smile-outlined class="ant-select-suffix"
-        /></template>
-      </a-select>
-      <a-button :icon="h(BellOutlined)">Gắn thẻ chủ đề</a-button>
-      <a-button :icon="h(BellOutlined)" type="primary">Lưu câu hỏi</a-button>
-    </div>
-  </a-layout-header>
   <div class="layout-preview flex flex-col items-center">
     <div class="mt-5 flex w-full justify-between px-2">
       <a-radio-group v-model:value="value2" button-style="solid">
@@ -60,8 +23,9 @@
     <div class="mt-5 flex w-[800px] gap-3">
       <div
         class="bg-answer-1 flex-1 overflow-hidden rounded-lg shadow-md"
-        v-for="answer in answers"
+        v-for="(answer, index) in answers"
         :class="answer"
+        :key="index"
       >
         <div class="flex w-full items-center justify-between px-2 pt-2">
           <div class="flex items-center gap-2">
@@ -76,7 +40,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { BellOutlined, PlusOutlined } from '@ant-design/icons-vue'
+import { BellOutlined } from '@ant-design/icons-vue'
 import type { SelectProps } from 'ant-design-vue'
 import { Editor } from '#components'
 
@@ -86,26 +50,7 @@ definePageMeta({
 
 const checked = ref(false)
 const value = ref('lucy')
-const value1 = ref('lucy')
 const value2 = ref<string>('a')
-const options1 = ref<SelectProps['options']>([
-  {
-    value: 'jack',
-    label: 'Jack',
-  },
-  {
-    value: 'lucy',
-    label: 'Lucy',
-  },
-  {
-    value: 'disabled',
-    label: 'Disabled',
-  },
-  {
-    value: 'yiminghe',
-    label: 'Yiminghe',
-  },
-])
 
 const answers = ref<String[]>([
   'bg-answer-1',
@@ -114,10 +59,6 @@ const answers = ref<String[]>([
   'bg-answer-4',
   // 'bg-answer-5',
 ])
-
-const handleChange = (value: string) => {
-  console.log(`selected ${value}`)
-}
 </script>
 
 <style>
@@ -156,13 +97,5 @@ const handleChange = (value: string) => {
   position: absolute;
   top: 0.5rem;
   z-index: 999;
-}
-
-.ant-layout-header {
-  background: white !important;
-}
-
-.ant-layout-header {
-  padding: 0 1.25rem !important;
 }
 </style>
