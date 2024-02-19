@@ -1,4 +1,5 @@
 <template>
+  <HeadPreview />
   <div class="layout-preview flex flex-col items-center">
     <div class="mt-5 flex w-full justify-between px-2">
       <a-radio-group v-model="value2" button-style="solid">
@@ -41,7 +42,7 @@
 </template>
 <script lang="ts" setup>
 import { BellOutlined } from '@ant-design/icons-vue'
-import { Editor } from '#components'
+import { Editor, HeadPreview } from '#components'
 
 definePageMeta({
   layout: 'quizz',
@@ -59,3 +60,11 @@ const answers = ref<String[]>([
   // 'answer--bg-5',
 ])
 </script>
+<style scoped>
+.question--pos {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 999;
+}
+</style>
