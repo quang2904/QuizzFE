@@ -62,7 +62,7 @@ definePageMeta({
   layout: 'quizz',
 })
 
-interface Answer {
+interface IAnswer {
   content: string
   value: number
 }
@@ -72,7 +72,7 @@ const score = ref<Number>(5)
 const page = ref<Number>(1)
 const totalPage = ref<Number>(8)
 const question = ref<String>('1')
-const answers = ref<Answer[]>([])
+const answers = ref<IAnswer[]>([])
 const answerValue = ref<Number>(0)
 const bgAnswers = ref<String[]>([
   'answer--bg-1',
