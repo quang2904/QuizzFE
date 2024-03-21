@@ -1,0 +1,20 @@
+game => join game
++ "player-join" param => pin, userName
++ chuyển sang trạng thái tiếp theo
+lobby => lobby player 
++ hiển thị tên cà mã pin 
++ loading
++ "gameStartedPlayer" khi nào ok thì chuyển sang màn tiếp theo
+playerGame => player game
+
+
+host => lobby host
++ phòng chờ chứa mã pin
++ số lượng thành viên tham gia
++ button hủy phòng
++ button start game
++ Lock
+hostGame => player game host
++ phát song game
++ time
++ câu hỏi và chuyển đến màn kết qua sau mỗi câu hỏi

@@ -65,6 +65,7 @@
 </template>
 <script lang="ts" setup>
 import { HeadHost } from '#components'
+import type { Socket } from 'socket.io-client'
 
 definePageMeta({
   layout: 'quizz',
@@ -75,6 +76,8 @@ interface IAnswer {
   value: number
 }
 
+const { $io }: { $io: Socket } = useNuxtApp()
+const route = useRoute()
 const time = ref<Number>(10)
 const score = ref<Number>(5)
 const page = ref<Number>(1)
@@ -92,6 +95,32 @@ const bgAnswers = ref<String[]>([
 
 const handleStop = () => {}
 const handleNext = () => {}
+const initDisplay = () => {
+  $io.emit('host-join-game', route.params?.id)
+
+  $io.on('noGameFound', () => {
+    navigateTo('/not-found')
+  })
+
+  $io.on('gameQuestions', (data) => {
+    console.log('gameQuestions', data)
+  })
+
+  $io.on('updatePlayersAnswered', (data) => {
+    console.log('updatePlayerAnswered', data)
+  })
+
+  $io.on('questionOver', (playerData, correct) => {
+    console.log("questionOver playerData", playerData)
+    console.log("questionOver correct", correct)
+  })
+}
+
+onMounted(() => {
+  if ($io) {
+    initDisplay()
+  }
+})
 </script>
 <style scoped>
 .question--pos {
