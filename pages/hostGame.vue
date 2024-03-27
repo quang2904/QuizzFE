@@ -11,21 +11,21 @@
         <div
           class="h-10 w-full rounded-full bg-green-300 text-center align-middle font-medium leading-10 text-white"
         >
-          {{ score }}
+          {{ question.score }}
         </div>
       </div>
       <div class="mt-10 flex flex-col">
         <div class="shadow-md">
           <div
             class="question--editor h-[400px] w-[800px] overflow-hidden rounded-lg bg-white px-8 py-8"
-            v-html="question"
+            v-html="question.content"
           />
         </div>
 
         <div class="mt-5 flex w-[800px] gap-3">
           <div
             class="flex-1 overflow-hidden rounded-lg shadow-md"
-            v-for="(item, index) in answers"
+            v-for="(item, index) in question.answers"
             :class="bgAnswers[index]"
             :key="item.value"
           >
@@ -53,15 +53,23 @@
     </div>
   </div>
   <div class="flex h-16 items-center justify-end bg-white px-5">
-    <h1 class="my-0">{{ page }} / {{ totalPage }}</h1>
+    <h1 class="my-0">{{ question.current }} / {{ question.total }}</h1>
   </div>
-  <!-- Statistic -->
-  <!-- <div class="mt-10 text-center">
+  <!-- Rank -->
+  <div class="mt-10 text-center">
     <div class="mb-5">Top Win</div>
-    <div v-for="item in [1, 2, 3]" :key="item">
-      <h1>name : {{ item }}</h1>
+    <div v-for="item in rank" :key="item.id">
+      <h1>name : {{ item.name }}</h1>
     </div>
-  </div> -->
+  </div>
+
+  <div class="mt-10 text-center">
+    <h1 v-for="item in statistic" :key="item.value">
+      {{ item.value }} : {{ item.percent }}
+    </h1>
+  </div>
+  <!-- chuyển màn -->
+  <a-button>Next</a-button>
 </template>
 <script lang="ts" setup>
 import { HeadHost } from '#components'
@@ -76,16 +84,35 @@ interface IAnswer {
   value: number
 }
 
+interface IQuestion {
+  content: string
+  answers: IAnswer[]
+  time: number
+  total: number
+  current: number
+  score: number
+}
+
+interface IRank {
+  id: number
+  name: string
+  score: number
+}
+interface IStatistic {
+  id: number
+  content: string
+  value: number
+  percent: number
+}
+
 const { $io }: { $io: Socket } = useNuxtApp()
 const route = useRoute()
-const time = ref<Number>(10)
-const score = ref<Number>(5)
-const page = ref<Number>(1)
-const totalPage = ref<Number>(8)
-const question = ref<String>('1')
-const answers = ref<IAnswer[]>([])
-const answerValue = ref<Number>(0)
-const bgAnswers = ref<String[]>([
+const time = ref<number>(0)
+const answerValue = ref<number>(0)
+const question = ref<IQuestion>()
+const rank = ref<IRank[]>()
+const statistic = ref<IStatistic[]>()
+const bgAnswers = ref<string[]>([
   'answer--bg-1',
   'answer--bg-2',
   'answer--bg-3',
@@ -94,7 +121,17 @@ const bgAnswers = ref<String[]>([
 ])
 
 const handleStop = () => {}
-const handleNext = () => {}
+const handleNext = () => {
+  // chuyển router
+}
+const countDownTimer = () => {
+  setTimeout(() => {
+    time.value = time.value - 1
+    if (time.value < 0) return
+    countDownTimer()
+  }, 1000)
+}
+
 const initDisplay = () => {
   $io.emit('host-join-game', route.params?.id)
 
@@ -103,16 +140,63 @@ const initDisplay = () => {
   })
 
   $io.on('gameQuestions', (data) => {
-    console.log('gameQuestions', data)
+    const dataTest = {
+      content: 'abc',
+      answers: [
+        {
+          content: 'a',
+          value: 1,
+        },
+        {
+          content: 'a',
+          value: 1,
+        },
+        {
+          content: 'a',
+          value: 1,
+        },
+        {
+          content: 'a',
+          value: 1,
+        },
+      ],
+      time: 5,
+      total: 8,
+      current: 1,
+      score: 5,
+    }
+    question.value = dataTest
+    time.value = dataTest.time
+    countDownTimer()
   })
 
   $io.on('updatePlayersAnswered', (data) => {
-    console.log('updatePlayerAnswered', data)
+    // thông kê các đáp án người dùng chọn
+    const dataTest = [
+      {
+        id: 1,
+        content: '',
+        value: 1,
+        percent: 10,
+      },
+    ]
+    statistic.value = dataTest
   })
 
   $io.on('questionOver', (playerData, correct) => {
-    console.log("questionOver playerData", playerData)
-    console.log("questionOver correct", correct)
+    const dataTest = [
+      {
+        id: 1,
+        name: 'a',
+        score: 1,
+      },
+      {
+        id: 2,
+        name: 'a',
+        score: 1,
+      },
+    ]
+    rank.value = dataTest
   })
 }
 

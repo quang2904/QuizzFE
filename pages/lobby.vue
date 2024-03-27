@@ -20,8 +20,8 @@ definePageMeta({
 
 const { $io }: { $io: Socket } = useNuxtApp()
 const route = useRoute()
-const userName = ref<String>('')
-const room = ref<String>('')
+const userName = ref<string>('')
+const room = ref<string>('')
 
 onMounted(() => {
   userName.value = route.query?.userName
@@ -33,7 +33,8 @@ onMounted(() => {
       pin: room.value,
     })
 
-    $io.on('gameStartedPlayer', () => {
+    $io.on('game-started', () => {
+      console.log('game started!!!')
       navigateTo({
         path: '/playerGame',
       })
