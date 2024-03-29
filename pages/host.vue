@@ -28,32 +28,30 @@ definePageMeta({
 })
 
 const { $io }: { $io: Socket } = useNuxtApp()
+const route = useRoute()
 const players = ref([])
 const room = ref('')
 
 const fetchRooms = () => {
-  console.log('fetchRooms')
+  room.value = String(route.query.room)
 
-  $io.emit('host-join')
+  $io.emit('host-join', room.value)
 
-  $io.on('showGamePin', (data) => {
-    console.log('showGamePin', data)
-    room.value = data.pin
-  })
-
-  $io.on('updatePlayerLobby', (data) => {
-    console.log('updatePlayerLobby', data)
+  $io.on('update-player-lobby', (data) => {
     players.value = data
   })
 
   $io.on('game-started', (id) => {
-    console.log('Game started!!')
     navigateTo({
       path: '/hostGame',
       params: {
         id,
       },
     })
+  })
+
+  $io.on('no-game-found', () => {
+    console.log('no-game-found')
   })
 }
 
@@ -66,7 +64,6 @@ const onBack = () => {
 }
 
 onMounted(() => {
-  console.log('onMounted')
   if ($io) {
     fetchRooms()
   }

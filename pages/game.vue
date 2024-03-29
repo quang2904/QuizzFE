@@ -9,20 +9,34 @@
   </div>
 </template>
 <script lang="ts" setup>
+import type { Socket } from 'socket.io-client'
+
 definePageMeta({
   layout: 'quizz',
 })
 
+const { $io }: { $io: Socket } = useNuxtApp()
 const userName = ref('')
 const room = ref('')
 
-const onJoinGame = () => {
-  navigateTo({
-    path: '/lobby',
-    query: {
-      userName: userName.value,
-      room: room.value,
-    },
-  })
+const onJoinGame = async () => {
+  try {
+    await useMyFetch('/game/player', {
+      method: 'POST',
+      body: {
+        clientId: $io.id,
+        player: {
+          name: userName.value,
+          pin: room.value,
+        },
+      },
+    })
+    navigateTo({
+      path: '/lobby',
+      query: {
+        room: room.value,
+      },
+    })
+  } catch (error) {}
 }
 </script>

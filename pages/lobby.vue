@@ -24,12 +24,10 @@ const userName = ref<string>('')
 const room = ref<string>('')
 
 onMounted(() => {
-  userName.value = route.query?.userName
-  room.value = route.query?.room
+  room.value = String(route.query?.room)
 
   if ($io) {
     $io.emit('player-join', {
-      name: userName.value,
       pin: room.value,
     })
 
@@ -38,6 +36,10 @@ onMounted(() => {
       navigateTo({
         path: '/playerGame',
       })
+    })
+
+    $io.on('profile-player', (data) => {
+      userName.value = data
     })
   }
 })
