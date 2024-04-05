@@ -4,8 +4,10 @@
     <a-layout>
       <HeadDefault />
       <a-layout-content class="m-5"> -->
-        <slot></slot>
-      <!-- </a-layout-content>
+  <div>
+    <slot></slot>
+  </div>
+  <!-- </a-layout-content>
     </a-layout>
   </a-layout> -->
 </template>

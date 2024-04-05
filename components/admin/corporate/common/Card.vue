@@ -1,9 +1,9 @@
 <template>
-  <div class="h-20 flex-1">
-    <div class="flex bg-white px-1 py-1">
-      <div class="mr-2 w-28">
+  <div class="h-20 flex-1 border">
+    <div class="flex h-full bg-white px-1 py-1">
+      <div class="border-card mr-2 w-28 overflow-hidden">
         <img
-          class="h-full w-full bg-gray-400 object-cover"
+          class="h-full w-full bg-gray-400 object-contain"
           alt="img"
           src="@/assets/img/logo_placeholder_sm.png"
         />

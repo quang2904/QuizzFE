@@ -1,7 +1,7 @@
 <template>
   <div class="flex gap-2">
     <a-input
-      placeholder="Tìm kiếm bất kỳ nội dung gì"
+      placeholder="Search any content"
       v-model:value="search"
       @input="onSearch"
     />
