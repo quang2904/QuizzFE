@@ -19,18 +19,48 @@ import Team from '@/components/admin/corporate/team/index.vue'
 import Folder from '@/components/admin/corporate/folder/index.vue'
 import Detail from '@/components/admin/corporate/detail/index.vue'
 import { LIST_TABS_LIBRARY, KEY_TABS_LIBRARY } from '@/constants/corporate'
+import { storeToRefs } from 'pinia'
 
 const route = useRoute()
-const activeKey = ref<number>(2)
+const corporate = useCorporate()
+const activeKey = ref<number>(1)
 const isDetail = ref<boolean>(false)
+const { query } = storeToRefs(corporate)
 
 watch(
   route.query,
-  (value) => {
-    if (value?.teamId || value?.folderId) {
-      isDetail.value = true
+  (newValue, oldValue) => {
+    isDetail.value = true
+    console.log('newValue', newValue)
+    console.log('oldValue', oldValue)
+    if (!oldValue) {
+      if (
+        Number(newValue?.tab) === KEY_TABS_LIBRARY.TAB_TEAM &&
+        newValue?.teamId
+      ) {
+        query.value.teamId = Number(newValue)
+        isDetail.value = true
+        return
+      }
+
+      if (
+        Number(newValue?.tab) === KEY_TABS_LIBRARY.TAB_FOLDER &&
+        newValue?.folderId
+      ) {
+        query.value.folderId = Number(newValue)
+        isDetail.value = true
+        return
+      }
     }
   },
-  { immediate: true }
+  { deep: true }
 )
+
+watch(activeKey, (value) => {
+  navigateTo({
+    query: {
+      tab: value,
+    },
+  })
+})
 </script>
