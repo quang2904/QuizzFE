@@ -2,17 +2,17 @@
   <div class="flex gap-2">
     <a-input
       placeholder="Search any content"
-      v-model:value="search"
+      v-model:value="content.search"
       @input="onSearch"
     />
     <a-select
-      v-model:value="filter"
+      v-model:value="content.filterId"
       style="width: 120px"
       @change="onFilter"
       :options="LIST_FILTER"
     />
     <a-select
-      v-model:value="sort"
+      v-model:value="content.sortId"
       style="width: 120px"
       @change="onSort"
       :options="LIST_SORT"
@@ -23,9 +23,8 @@
 import { LIST_FILTER, LIST_SORT } from '@/constants/corporate'
 import { debounce } from 'lodash'
 
-const search = ref()
-const filter = ref()
-const sort = ref()
+const corporate = useCorporate()
+const { content } = storeToRefs(corporate)
 
 const onSearch = debounce((value: number) => {
   console.log('search', value)

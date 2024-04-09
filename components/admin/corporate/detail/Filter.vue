@@ -2,8 +2,8 @@
   <div>
     <div class="mx-1 flex items-center justify-between">
       <div class="flex">
-        <ArrowLeftOutlined class="mr-2 mt-1" />
-        <div>Teams / history</div>
+        <ArrowLeftOutlined class="mr-2 mt-1" @click="onBack" />
+        <div>{{ route?.query?.teamId ? 'Teams' : 'Folder' }} / history</div>
       </div>
       <a-dropdown placement="bottomRight" :arrow="{ pointAtCenter: true }">
         <a-button :icon="h(MoreOutlined)" />
@@ -29,15 +29,13 @@
     </div>
     <div class="mt-2 flex gap-2">
       <a-select
-        v-model:value="filter"
+        v-model:value="detail.filterId"
         style="width: 120px"
-        @change="onFilter"
         :options="LIST_FILTER"
       />
       <a-select
-        v-model:value="sort"
+        v-model:value="detail.sortId"
         style="width: 120px"
-        @change="onSort"
         :options="LIST_SORT"
       />
     </div>
@@ -47,15 +45,11 @@
 import { MoreOutlined } from '@ant-design/icons-vue'
 import { LIST_FILTER, LIST_SORT } from '@/constants/corporate'
 
-const filter = ref()
-const sort = ref()
+const route = useRoute()
+const corporate = useCorporate()
+const { detail } = storeToRefs(corporate)
 
 const onAddInFolder = () => {}
 const onDelete = () => {}
-const onFilter = (value: number) => {
-  console.log('filter', value)
-}
-const onSort = (value: number) => {
-  console.log('sort', value)
-}
+const onBack = () => {}
 </script>
