@@ -28,30 +28,20 @@ const isDetail = ref<boolean>(false)
 const { query } = storeToRefs(corporate)
 
 watch(
-  route.query,
-  (newValue, oldValue) => {
-    isDetail.value = true
-    console.log('newValue', newValue)
-    console.log('oldValue', oldValue)
-    if (!oldValue) {
-      if (
-        Number(newValue?.tab) === KEY_TABS_LIBRARY.TAB_TEAM &&
-        newValue?.teamId
-      ) {
-        query.value.teamId = Number(newValue)
-        isDetail.value = true
-        return
-      }
-
-      if (
-        Number(newValue?.tab) === KEY_TABS_LIBRARY.TAB_FOLDER &&
-        newValue?.folderId
-      ) {
-        query.value.folderId = Number(newValue)
-        isDetail.value = true
-        return
-      }
+  () => route.query,
+  (value) => {
+    if (Number(value?.tab) === KEY_TABS_LIBRARY.TAB_TEAM && value?.teamId) {
+      query.value.teamId = Number(value?.teamId)
+      isDetail.value = true
+      return
     }
+
+    if (Number(value?.tab) === KEY_TABS_LIBRARY.TAB_FOLDER && value?.folderId) {
+      query.value.folderId = Number(value?.folderId)
+      isDetail.value = true
+      return
+    }
+    isDetail.value = false
   },
   { deep: true }
 )

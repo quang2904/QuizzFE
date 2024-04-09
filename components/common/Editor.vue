@@ -5,7 +5,6 @@
     @input="onTinymceChange"
     :initial-value="value"
     inline
-    class="d-flex"
     :init="config"
   />
 </template>

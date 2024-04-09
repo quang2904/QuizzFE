@@ -16,7 +16,7 @@ const handleFolder = (id) => {
   navigateTo({
     query: {
       ...route.query,
-      teamId: id,
+      folderId: id,
     },
   })
 }

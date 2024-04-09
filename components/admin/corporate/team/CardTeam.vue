@@ -1,6 +1,7 @@
 <template>
   <div
     class="flex h-20 items-center justify-between overflow-hidden border bg-white"
+    @click="handleFolder(1)"
   >
     <div class="px-2 py-2">
       <h1>History</h1>
@@ -16,6 +17,7 @@
   </div>
 </template>
 <script lang="ts" setup>
+const route = useRoute()
 const userAccount = [
   {
     id: 1,
@@ -39,5 +41,12 @@ const userAccount = [
   },
 ]
 
-
+const handleFolder = (id) => {
+  navigateTo({
+    query: {
+      ...route.query,
+      teamId: id,
+    },
+  })
+}
 </script>
